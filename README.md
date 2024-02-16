@@ -23,29 +23,29 @@ We selected the Liquidity Pool data at a certain block height, and the raw data 
 The main goal of this part is to find raw Cycles in a directed graph. This algorithm starts at a specified start node and uses Depth First Search (DFS) to traverse all paths in the directed graph, looking for paths that form true loops...
 The slippage is defined as:
 
-\[
+$$
 \text{Slippage} = \frac{\text{Theoretical Amount} - \text{Actual Amount Received}}{\text{Theoretical Amount}}
-\]
+$$
 
 The adjusted price considering slippage is given by:
 
-\[
+$$
 \text{Adjusted Price} = \text{price} \times (1 + \text{Slippage})
-\]
+$$
 
 The arbitrage amount considering slippage for a given path is calculated through the series of trades, with each trade's output amount determined by:
 
-\[
+$$
 \text{amount}_{i+1} = \text{amount}_i \times \text{Adjusted Price}_i
-\]
+$$
 
 where \(\text{Adjusted Price}_i\) is the adjusted price for the \(i\)-th trade considering slippage.
 
 At the same time, since each path contains multiple exchanges between Token\_Pair, we assume Start\_token=1 to calculate the arbitrage amount. But in fact, the reserve of each token is not the same, and there are many token\_pairs with very exaggerated exchange\_ratio in DEX, which leads to the possibility of insufficient stock when token\_exchange at a certain step in the path. Therefore, for each path, when calculating the arbitrage amount, we need to first calculate the equivalent reserve of the start token for each token involved in the path. The purpose is to calculate the maximum arbitrage amount of the path. The equivalent reserve of the start token along a given path, considering the reserve and price of each token in the path, is calculated as:
 
-\[
+$$
 \text{Equivalent Reserve} = \min_{i} \left( \frac{\text{Reserve}_i}{\text{Price}_i} \right)
-\]
+$$
 
 
 
