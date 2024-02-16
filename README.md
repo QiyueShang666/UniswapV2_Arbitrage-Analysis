@@ -23,3 +23,12 @@ We selected the Liquidity Pool data at a certain block height, and the raw data 
 The main goal of this part is to find raw Cycles in a directed graph. This algorithm starts at a specified start node and uses Depth First Search (DFS) to traverse all paths in the directed graph, looking for paths that form true loops...
 
 The adjusted price considering slippage is given by:
+
+
+## Code Files Description
+
+- `Arbitrage Verification.ipynb`: A tool for assisting verification of token_pair conversion to path correctness.
+- `Arbitrage_Analysis with different Length.ipynb`: Code file for analyzing different cycle lengths starting from a specific token.
+- `Arbitrage_Analysis with different token.ipynb`: Analysis of arbitrage amounts and distributions for different tokens on the same path length.
+- `Network Visualization.ipynb`: A tool for the visualization of directed graph networks.
+- `Triangular Arbitrage Analysis.ipynb`: Code for basic triangular arbitrage calculations.
