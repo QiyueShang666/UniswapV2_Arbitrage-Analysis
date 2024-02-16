@@ -23,7 +23,7 @@ We selected the Liquidity Pool data at a certain block height, and the raw data 
 The main goal of this part is to find raw Cycles in a directed graph. This algorithm starts at a specified start node and uses Depth First Search (DFS) to traverse all paths in the directed graph, looking for paths that form true loops...
 
 The adjusted price considering slippage is given by:
-
+Slippage = (Theoretical Amount - Actual Amount Received) / Theoretical Amount
 
 ## Code Files Description
 
