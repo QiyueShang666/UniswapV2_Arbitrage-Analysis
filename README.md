@@ -21,7 +21,6 @@ We selected the Liquidity Pool data at a certain block height, and the raw data 
 ## Pathfinding Algorithm and Arbitrage Calculation
 
 The main goal of this part is to find raw Cycles in a directed graph. This algorithm starts at a specified start node and uses Depth First Search (DFS) to traverse all paths in the directed graph, looking for paths that form true loops...
-
 The slippage is defined as:
 
 \[
@@ -47,6 +46,7 @@ At the same time, since each path contains multiple exchanges between Token\_Pai
 \[
 \text{Equivalent Reserve} = \min_{i} \left( \frac{\text{Reserve}_i}{\text{Price}_i} \right)
 \]
+
 
 
 ## Code Files Description
